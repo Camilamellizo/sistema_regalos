@@ -1,26 +1,27 @@
-<template>
-<div class="container">
-  <div class="mt-8">
-  <button @click="isAdmin = true, isFamily= false" type="button" class="font-mono text-4xl mr-4 border-4 border-white hover:border-b-red-500">
+<template >
+<div class="container bg-red-900 pt-8">
+  <div>
+  <button @click="isAdmin = true, isFamily= false" type="button" class="font-mono text-4xl text-white mr-4 border-4 border-red-900 hover:border-b-white">
     Papá Noel
   </button>
-  <span class="text-4xl">/</span>
-  <button @click="isFamily = true, isAdmin=false" class="font-mono text-4xl ml-4 border-4 border-white hover:border-b-red-500">
+  <span class="text-4xl text-white">/</span>
+  <button @click="isFamily = true, isAdmin=false" class="font-mono text-4xl  text-white ml-4 border-4 border-red-900 hover:border-b-white">
     Familia
   </button>
 </div>  
-</div>
-  
+<div class="container bg-red-900 pt-8">
 <AdminView v-if="isAdmin" @createProject="addProject" :allProjects="allProjects"></AdminView>
 <UserView v-if="isFamily"/>
-<catalogoFamily/>
+</div>
+
+</div>
   
+
 </template>
 
 <script>
 import UserView from './components/UserView.vue'
 import AdminView from './components/view/AdminView.vue'
-import catalogoFamily from './components/catalogoFamily.vue'
 
 import '@/assets/tailwind.css';
 
@@ -28,8 +29,7 @@ export default {
   name: 'App',
   components: {
     UserView,
-    AdminView,  
-    catalogoFamily  
+    AdminView,    
   },
   data() {
     return {

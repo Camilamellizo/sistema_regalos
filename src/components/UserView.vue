@@ -1,5 +1,5 @@
 <template>
-  <div class="font-sans">
+  <div class="font-sans bg-red-900">
     <div class="relative min-h-screen flex flex-col sm:justify-center items-center  ">
       <div class="relative sm:max-w-sm w-full">
         <div class="card bg-green-400 shadow-lg  w-full h-full rounded-3xl absolute  transform -rotate-6"></div>
@@ -16,7 +16,7 @@
             </div>
             <div>
               <label for="edad">Edad</label>
-              <input type="text" v-model="edad" placeholder="Edad" required
+              <input type="number" min="1" max="60" v-model="edad" placeholder="Edad" required
                 class="mt-1 block w-full border-none bg-gray-100 h-11 rounded-xl shadow-lg hover:bg-blue-100 focus:bg-blue-100 focus:ring-0">
             </div>
             <div>
@@ -27,7 +27,7 @@
             <div>
               <div class="mb-4">
                 <label for="pregunta">¿Te has portado bien este año?</label>
-                <input type="text" v-model="ciudad" placeholder=" Respuesta" required
+                <input type="text" v-model="pregunta" placeholder=" Respuesta" required
                 class="mt-1 block w-full border-none bg-gray-100 h-11 rounded-xl shadow-lg hover:bg-blue-100 focus:bg-blue-100 focus:ring-0">
            
               </div>
@@ -37,7 +37,7 @@
             </div>
   
             <div class="mt-7">
-              <button type="submit"
+              <button type="submit" @click=" guardarpersonInfo() "
                 class="bg-green-500 w-full py-3 rounded-xl text-white shadow-xl hover:shadow-inner focus:outline-none transition duration-500 ease-in-out  transform hover:-translate-x hover:scale-105">
                 Entrar
               </button>
@@ -50,43 +50,55 @@
               </label>
               <hr class="border-gray-300 border-1 w-full rounded-md">
             </div>
-            <div v-if="weather" class="grid  justify-items-center text-center">
-              <img :src="imgUrl" :alt="weather.name" class="w-32 h-32">
-              <h2>{{ weather.main.temp }}</h2>
-              <p>{{ weather.name }},{{ weather.sys.country }}</p>
-            </div>
+           
   
           </div>
   
         </div>
       </div>
     </div>
+<catalogoFamily :persona="persona"/>
+  
   </div>
+  
 </template>
 
+
 <script>
+import catalogoFamily from './catalogoFamily.vue'
+
 export default {
   name: 'UserView',
-  props: {
-    
-  }
+  components: {
+    catalogoFamily,  
+  },
+
+  data(){
+    return {
+    nombre:"",
+    edad:"",
+    ciudad:"",
+    pregunta:"",
+    persona:"",
+    }
+  },
+
+  props: {    
+  },
+   methods:{
+
+     guardarpersonInfo(){      
+      this.persona = {                           // creo la persona en una variable //crear el objeto//
+        nombre: this.nombre,
+        edad: this.edad,
+        ciudad: this.ciudad,
+      }
+      console.log(this.persona)
+
+    },
+  
+  } 
+
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-h3 {
-  margin: 40px 0 0;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
-}
-</style>
