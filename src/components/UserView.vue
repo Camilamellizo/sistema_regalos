@@ -1,5 +1,6 @@
 <template>
-  <div class="font-sans bg-red-900">
+  
+  <div class="font-sans">
     <div class="relative min-h-screen flex flex-col sm:justify-center items-center  ">
       <div class="relative sm:max-w-sm w-full">
         <div class="card bg-green-400 shadow-lg  w-full h-full rounded-3xl absolute  transform -rotate-6"></div>
@@ -39,8 +40,12 @@
             <div class="mt-7">
               <button type="submit" @click=" guardarpersonInfo() "
                 class="bg-green-500 w-full py-3 rounded-xl text-white shadow-xl hover:shadow-inner focus:outline-none transition duration-500 ease-in-out  transform hover:-translate-x hover:scale-105">
-                Entrar
+               <RouterLink to="/catalogo">Entrar</RouterLink>
               </button>
+            </div>
+            <div>
+              <RouterView/>
+
             </div>
   
             <div class="flex mt-7 items-center text-center">
@@ -57,7 +62,8 @@
         </div>
       </div>
     </div>
-<catalogoFamily :persona="persona"/>
+<catalogoFamily :persona="persona"/> 
+
   
   </div>
   
@@ -65,13 +71,15 @@
 
 
 <script>
-import catalogoFamily from './catalogoFamily.vue'
+//import { RouterView } from 'vue-router'
+import catalogoFamily from './view/catalogoFamily.vue'
 
 export default {
   name: 'UserView',
   components: {
-    catalogoFamily,  
-  },
+    catalogoFamily,
+    
+},
 
   data(){
     return {

@@ -1,36 +1,24 @@
 <template >
-<div class="container bg-red-900 pt-8">
-  <div>
-  <button @click="isAdmin = true, isFamily= false" type="button" class="font-mono text-4xl text-white mr-4 border-4 border-red-900 hover:border-b-white">
-    Papá Noel
-  </button>
-  <span class="text-4xl text-white">/</span>
-  <button @click="isFamily = true, isAdmin=false" class="font-mono text-4xl  text-white ml-4 border-4 border-red-900 hover:border-b-white">
-    Familia
-  </button>
-</div>  
-<div class="container bg-red-900 pt-8">
-<AdminView v-if="isAdmin" @createProject="addProject" :allProjects="allProjects"></AdminView>
-<UserView v-if="isFamily"/>
-</div>
+  <div id="app" class="pt-8  ">
 
-</div>
-  
-
+    <!-- NAvBAR -->
+    <ul class="flex list-none justify-center">
+      <li class="font-mono text-4xl text-white mr-4 border-4 border-transparent hover:border-b-white"><RouterLink to="Admin">Papá Noel</RouterLink></li>
+      <li class="text-4xl text-white">/</li>
+      <li class="font-mono text-4xl text-white ml-4 border-4 border-transparent hover:border-b-white"><RouterLink to="User">Familia</RouterLink></li>
+    </ul>
+    <!-- content -->
+    <div class=" pt-8">
+      <router-view></router-view>
+    </div>
+  </div>
 </template>
 
 <script>
-import UserView from './components/UserView.vue'
-import AdminView from './components/view/AdminView.vue'
-
 import '@/assets/tailwind.css';
 
 export default {
   name: 'App',
-  components: {
-    UserView,
-    AdminView,    
-  },
   data() {
     return {
       isAdmin: false,

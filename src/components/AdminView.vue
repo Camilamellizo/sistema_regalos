@@ -1,7 +1,7 @@
 <template> 
 <div class="grid grid-cols-2 ">
   <!-- columna uno -->
-  <div class="font-sans bg-red-900 col-span-1">
+  <div class="font-sans  col-span-1">
     <div class="relative min-h-screen flex flex-col sm:justify-center items-center  ">
       <div class="relative sm:max-w-sm w-full">
         <div class="card bg-green-400 shadow-lg  w-full h-full rounded-3xl absolute  transform -rotate-6"></div>
@@ -65,7 +65,7 @@
   </div>
     <!-- columna dos -->
     
-  <div class="col-span-1 bg-red-900 relative sm:justify-center text-white text-xl">
+  <div class="col-span-1  relative sm:justify-center text-white text-4xl ">
 
     <div class="grid grid-cols-2 p-8 font-mono" v-show="showImage"  >      
 
@@ -92,7 +92,7 @@
           <div class="flex flex-wrap w-1/4 " v-for="(project, index) in allProjects" :key="project.image">
             <div class="w-full p-1 md:p-2">
               <!--  div hijos que debo añadir las veces de la lista -->
-              <img :src=project.image @click="descripciondeImagen(index)" class="rounded border border-4 border-red-900 hover:border-white" alt="gallery" id="AddImage ">
+              <img :src=project.image @click="descripciondeImagen(index)" class="rounded border border-4 border-red-900 hover:border-yellow-300" alt="gallery" id="AddImage ">
             </div>
           </div>
         </div>

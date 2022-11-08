@@ -1,10 +1,8 @@
 <template>
-<div class="container bg-pink-400 ">
-
- 
+<div > 
 <nav class="bg-red-500 text-white font-mono border-gray-200 px-2 sm:px-4 py-2.5 rounded dark:bg-gray-900">
   <div class="container flex flex-wrap justify-between items-center mx-auto ">
-    <span class="self-center text-2xl font-mono whitespace-nowrap dark:text-white pl-8">{{persona.nombre}}</span>
+    <span class="self-center text-2xl font-mono whitespace-nowrap dark:text-white pl-8">hola</span>
     <div class="flex items-center md:order-2">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
           class="w-8 h-8">
@@ -38,7 +36,7 @@ export default {
     edad:"",
     ciudad:"",
     
-    };
+    }
   },
  methods:{
 
