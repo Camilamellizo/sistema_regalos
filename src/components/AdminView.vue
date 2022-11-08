@@ -4,7 +4,7 @@
   <div class="font-sans  col-span-1">
     <div class="relative min-h-screen flex flex-col sm:justify-center items-center  ">
       <div class="relative sm:max-w-sm w-full">
-        <div class="card bg-amber-500 shadow-lg  w-full h-full rounded-3xl absolute  transform -rotate-6"></div>
+        <div class="card bg-amber-200 shadow-lg  w-full h-full rounded-3xl absolute  transform -rotate-6"></div>
         <div class="card bg-red-600 shadow-lg  w-full h-full rounded-3xl absolute  transform rotate-6"></div>
         <div class="relative w-full rounded-3xl  px-6 py-4 bg-gray-100 shadow-md">
           <label for="" class="block mt-3 text-2xl text-gray-700 text-center font-semibold">
@@ -37,7 +37,7 @@
 
             <div class="mt-7 ">
               <button type="button" @click="guardar()"
-                class="bg-amber-500 w-full py-3 rounded-xl  shadow-xl hover:shadow-inner focus:outline-none transition duration-500 ease-in-out  transform hover:-translate-x hover:scale-105 flex justify-center">
+                class="bg-amber-200 w-full py-3 rounded-xl  shadow-xl hover:shadow-inner focus:outline-none transition duration-500 ease-in-out  transform hover:-translate-x hover:scale-105 flex justify-center">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="red"
                   class="w-10 h-10">
                   <path stroke-linecap="round" stroke-linejoin="round"
@@ -64,7 +64,7 @@
 
       <div class="rounded mt-8 ">
         <button type="submit"
-          class="bg-amber-500 px-3 py-3 rounded-xl text-white shadow-xl hover:shadow-inner focus:outline-none transition duration-500 ease-in-out  transform hover:-translate-x hover:scale-105">
+          class="bg-amber-200 px-3 py-3 rounded-xl text-red-900 font-mono shadow-xl hover:shadow-inner focus:outline-none transition duration-500 ease-in-out  transform hover:-translate-x hover:scale-105">
           <RouterLink to="/">volver</RouterLink>
         </button>
       </div>

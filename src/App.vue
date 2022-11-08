@@ -7,7 +7,7 @@
       <li class="text-4xl text-white">/</li>
       <li class="font-mono text-4xl text-white ml-4 border-4 border-transparent hover:border-b-white"><RouterLink to="User">Familia</RouterLink></li>
     </ul>
-    <hr class="mx-10 mt-4 border border-amber-500">
+    <hr class="mx-10 mt-4 border border-amber-200">
     
     <!-- content -->
     <div class=" pt-8  ">
