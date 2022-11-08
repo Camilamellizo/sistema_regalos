@@ -12,23 +12,18 @@
           <div class="mt-10 font-mono">
             <div>
               <label for="nombre">Nombre:</label>
-              <input type="text" v-model="nombre" placeholder="Nombre:" required
+              <input type="text" v-model="nombre" placeholder="Nombre:" 
                 class="mt-1 block w-full border-none bg-gray-100 h-11 rounded-xl shadow-lg hover:bg-blue-100 focus:bg-blue-100 focus:ring-0">
             </div>
             <div>
               <label for="edad">Edad</label>
-              <input type="number" min="1" max="60" v-model="edad" placeholder="Edad" required
-                class="mt-1 block w-full border-none bg-gray-100 h-11 rounded-xl shadow-lg hover:bg-blue-100 focus:bg-blue-100 focus:ring-0">
-            </div>
-            <div>
-              <label for="ciudad">Ciudad</label>
-              <input type="text" v-model="ciudad" placeholder="Ciudad" required
+              <input  type="number" min="1" max="60" v-model="edad" placeholder="Edad" 
                 class="mt-1 block w-full border-none bg-gray-100 h-11 rounded-xl shadow-lg hover:bg-blue-100 focus:bg-blue-100 focus:ring-0">
             </div>
             <div>
               <div class="mb-4">
                 <label for="pregunta">¿Te has portado bien este año?</label>
-                <input type="text" v-model="pregunta" placeholder=" Respuesta" required
+                <input type="text" v-model="pregunta" placeholder=" Respuesta" 
                 class="mt-1 block w-full border-none bg-gray-100 h-11 rounded-xl shadow-lg hover:bg-blue-100 focus:bg-blue-100 focus:ring-0">
            
               </div>
@@ -61,10 +56,13 @@
   
         </div>
       </div>
-    </div>
-<catalogoFamily :persona="persona"/> 
-
-  
+      <div class="rounded mt-8">
+        <button type="submit"
+          class="bg-green-500 px-3 py-3 rounded-xl text-white shadow-xl hover:shadow-inner focus:outline-none transition duration-500 ease-in-out  transform hover:-translate-x hover:scale-105">
+          <RouterLink to="/">volver</RouterLink>
+        </button>
+      </div>
+    </div>  
   </div>
   
 </template>
@@ -72,14 +70,14 @@
 
 <script>
 //import { RouterView } from 'vue-router'
-import catalogoFamily from './view/catalogoFamily.vue'
+//import catalogoFamily from './view/catalogoFamily.vue'
 
 export default {
   name: 'UserView',
-  components: {
-    catalogoFamily,
-    
-},
+  props: [
+        'allProjects',
+        
+    ],
 
   data(){
     return {
@@ -91,8 +89,6 @@ export default {
     }
   },
 
-  props: {    
-  },
    methods:{
 
      guardarpersonInfo(){      

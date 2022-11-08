@@ -8,7 +8,7 @@ module.exports = {
    
     extend: {
       backgroundImage: {
-       'fondo': "url('/src/assets/fondo.jpg')",
+       'fondo': "url('/src/assets/fondo2.jpg')",
       },  
       spacing: {
         '98': '34rem',

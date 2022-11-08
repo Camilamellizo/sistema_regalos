@@ -7,8 +7,9 @@
       <li class="text-4xl text-white">/</li>
       <li class="font-mono text-4xl text-white ml-4 border-4 border-transparent hover:border-b-white"><RouterLink to="User">Familia</RouterLink></li>
     </ul>
+    
     <!-- content -->
-    <div class=" pt-8">
+    <div class=" pt-8  ">
       <router-view></router-view>
     </div>
   </div>
@@ -17,8 +18,12 @@
 <script>
 import '@/assets/tailwind.css';
 
+
 export default {
   name: 'App',
+  components: {
+ 
+  },
   data() {
     return {
       isAdmin: false,
@@ -32,6 +37,7 @@ export default {
       console.log(this.allProjects)
     },
   },
+ 
 }
 </script>
 

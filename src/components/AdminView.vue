@@ -61,6 +61,13 @@
 
         </div>
       </div>
+      
+      <div class="rounded mt-8 ">
+        <button type="submit"
+          class="bg-green-500 px-3 py-3 rounded-xl text-white shadow-xl hover:shadow-inner focus:outline-none transition duration-500 ease-in-out  transform hover:-translate-x hover:scale-105">
+          <RouterLink to="/">volver</RouterLink>
+        </button>
+      </div>
     </div>
   </div>
     <!-- columna dos -->
@@ -99,20 +106,16 @@
       </div>
     </section>
 
-  </div>
-  
-  
+  </div> 
 </div>
-
-
-
 </template>
   
 <script>
   export default {
     name: "AdminView",
     props: [
-        'allProjects'
+        'allProjects',
+        'persona'
     ],
    
  
