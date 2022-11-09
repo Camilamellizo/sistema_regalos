@@ -96,10 +96,10 @@
 
         <div class="flex flex-wrap -m-1 md:-m-2">
           <!-- div padre existente -->
-          <div class="flex flex-wrap w-1/4 " v-for="(project, index) in allProjects" :key="project.image">
-            <div class="w-full p-1 md:p-2">
+          <div class="flex flex-wrap w-1/3 " v-for="(project, index) in projects" :key="project.image">
+            <div class="w-40 h-64 p-1 md:p-2">
               <!--  div hijos que debo añadir las veces de la lista -->
-              <img :src=project.image @click="descripciondeImagen(index)" class="rounded border border-4 border-red-900 hover:border-yellow-300" alt="gallery" id="AddImage ">
+              <img :src=project.image @click="descripciondeImagen(index)" class="rounded border border-4 border-red-900 hover:border-yellow-300 " alt="gallery" id="AddImage ">
             </div>
           </div>
         </div>
@@ -114,8 +114,7 @@
   export default {
     name: "AdminView",
     props: [
-        'allProjects',
-        'persona'
+        
     ],
    
  
@@ -126,8 +125,15 @@
       description: "",
       projectShow:"",
       showImage:false,
+     
     };
   },
+  computed: {
+    projects() {
+      return this.$allProjects
+    }
+  },
+
   methods: {
     guardar() {
       const project = {                           // creo el proyecto en una variable //crear el objeto//
@@ -135,26 +141,19 @@
         image: this.image,
         description: this.description,
       }
-      console.log(project)
+      this.$allProjects.push(project),
+      this.title="",
+      this.image="",
+      this.description=""
 
-      this.$emit("createProject", project);    //emite y envia 1 proyecto  //recibe el objeto como parametro y crea un nuevo proyecto
-
-      this.title = "",                       //eliminar el valor y poner el input en blanco 
-      this.image = "",
-      this.description = ""
     },
 
     descripciondeImagen(index){
-      this.projectShow=this.allProjects[index]
-      console.log(this.projectShow)
-      this.showImage=true
+      this.projectShow=this.$allProjects[index]
+      this.showImage=true      
       
     }
   },
-
- 
-
-
 }
 
 </script>

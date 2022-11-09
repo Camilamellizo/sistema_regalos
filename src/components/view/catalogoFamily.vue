@@ -22,9 +22,9 @@
       <div class="flex flex-wrap -m-1 md:-m-2">
 
         <div class="flex flex-wrap w-1/4">
-          <div class="w-full p-1 md:p-2">
+          <div class="w-full p-1 md:p-2 " v-for="(project, index) in projects" :key="index">
             <img alt="gallery" class="block object-cover object-center w-full h-full rounded-lg"
-              src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(73).webp">
+              :src=project.image>
           </div>
         </div>
       </div>
@@ -56,7 +56,7 @@
       <div class="bg-red-600 rounded pb-2">
         <button type="submit"
           class="bg-amber-200  px-3 py-3 rounded-xl text-red-900 shadow-xl hover:shadow-inner focus:outline-none transition duration-500 ease-in-out  transform hover:-translate-x hover:scale-105">
-          <RouterLink to="/">Enviar Carta</RouterLink>
+          <RouterLink to="/carta">Ver mi Carta</RouterLink>
         </button>
       </div>
     </div>
@@ -69,25 +69,29 @@
         <div class="bg-amber-200 text-red-900 rounded h-12 rounded pt-2">
           <span>El Clima</span>
         </div>
-        <div class="bg-red-600 rounded h-32">
-          <span>api weather</span>
+        <div class="bg-red-600 rounded  ">
+          <div v-if="weather" class="grid  justify-items-center text-center text-white font-mono pb-2">
+            <img :src="imgUrl" :alt="weather.name" class="w-24 h-24 rounded">
+            <h2>{{ weather.main.temp }}</h2>
+            <p>{{ weather.name }},{{ weather.sys.country }}</p>
+          </div>
         </div>
       </div>
+
+
       <!-- fila 2 api-peliculas -->
       <div class=" ">
         <div class="bg-amber-200  text-red-900 rounded h-12 rounded pt-2">
           <span>Peliculas</span>
         </div>
-        <div class="bg-red-600 rounded h-32 ">
-          <span> api Peliculas Navideñas</span>
+        <div class="bg-red-600 rounded h-32 pt-4">
+          <span class="text-white font-mono "> Ya tienes planes para esta navidad? <br>haz click 
+            <span class="underline"><RouterLink to="/peliculas">Aqui</RouterLink></span> para ver una pelicula en familia. 
+          </span>
         </div>
       </div>
-      <div class="rounded mt-2">
-        <button type="submit"
-          class="bg-amber-200  px-3 py-3 rounded-xl text-red-900 shadow-xl hover:shadow-inner focus:outline-none transition duration-500 ease-in-out  transform hover:-translate-x hover:scale-105">
-          <RouterLink to="/">volver</RouterLink>
-        </button>
-      </div>
+
+     
     </div>
 
 
@@ -100,24 +104,53 @@
 <script>
 export default {
     name: "catalogoFamily",
-    props: [
-            'allProjects',
-            'persona'
-    ],
 
-        data() {
+    data() {
     return {
 
     title: "",
     image: "",
     description: "",
     nombre:"",
-    edad:"",
-    ciudad:"",
-    
+    loading: false,
+      location: "Rovaniemi",
+      weather: null,
+      error: "",
+      key:"0e580afee13da9ed1a14afb86d1d8bf8"   
     }
   },
+  computed: {
+    imgUrl: function() {
+      return `http://openweathermap.org/img/wn/${this.weather.weather[0].icon}@2x.png`
+    },
+    
+    projects() {
+      return this.$allProjects
+    },
+    computed: {
+    userName() {
+      return this.$nameUser
+    }
+  },
+
+
+  },
+
+  mounted() {
+    this.getWeather()
+  },
+
  methods:{
+  getWeather(){
+      fetch(`http://api.openweathermap.org/data/2.5/weather?q=${this.location}&appid=${this.key}&units=metric`)
+      //api.openweathermap.org/data/2.5/weather?q=London,uk&APPID=0e580afee13da9ed1a14afb86d1d8bf8
+      .then((res)=>{
+        if(!res.ok) throw new Error("Tenemos problemas cargando tus Datos")
+        return res.json();
+      })
+      .then((data) => (this.weather = data))
+      .catch((e) => (this.error = e))
+    }
 
  }
 }

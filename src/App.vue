@@ -1,5 +1,5 @@
 <template >
-  <div id="app" class="pt-8  ">
+  <div id="app" class="pt-8 bg-red-900 ">
 
     <!-- NAvBAR -->
     <ul class="flex list-none justify-center">
@@ -27,16 +27,11 @@ export default {
   },
   data() {
     return {
-      isAdmin: false,
-      isFamily:false,
-      allProjects: [],                      //array donde se agregan los objetos
+                          
     };
   },
   methods: {
-    addProject(project) {                   //recibe el proyecto y lo agrega a la array o lista
-      this.allProjects.push(project); 
-      console.log(this.allProjects)
-    },
+    
   },
  
 }

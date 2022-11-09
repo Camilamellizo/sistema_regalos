@@ -22,4 +22,14 @@ export const routes = [
     name: "User",
     component: () => import("./components/UserView.vue"),
   },
+  {
+    path: "/carta",
+    name: "carta",
+    component: () => import("./components/view/listComp.vue"),
+  },
+  {
+    path: "/peliculas",
+    name: "peliculas",
+    component: () => import("./components/view/peliculasComp.vue"),
+  }
 ];

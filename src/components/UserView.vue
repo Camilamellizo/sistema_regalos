@@ -21,11 +21,20 @@
                 class="mt-1 block w-full border-none bg-gray-100 h-11 rounded-xl shadow-lg hover:bg-blue-100 focus:bg-blue-100 focus:ring-0">
             </div>
             <div>
-              <div class="mb-4">
+              <div class="mb-4 ">
                 <label for="pregunta">¿Te has portado bien este año?</label>
-                <input type="text" v-model="pregunta" placeholder=" Respuesta" 
-                class="mt-1 block w-full border-none bg-gray-100 h-11 rounded-xl shadow-lg hover:bg-blue-100 focus:bg-blue-100 focus:ring-0">
-           
+                <div class="flex justify-center">
+                <div class="flex items-center mr-8">
+                  <input id="inline-checkbox" type="checkbox" value=""
+                    class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                  <label for="inline-checkbox" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Si</label>
+                </div>
+                <div class="flex items-center mr-4">
+                  <input id="inline-2-checkbox" type="checkbox" value=""
+                    class="w-4 h-4  bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                  <label for="inline-2-checkbox" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">No</label>
+                </div> 
+                </div>
               </div>
               
   
@@ -74,16 +83,11 @@
 
 export default {
   name: 'UserView',
-  props: [
-        'allProjects',
-        
-    ],
 
   data(){
     return {
     nombre:"",
     edad:"",
-    ciudad:"",
     pregunta:"",
     persona:"",
     }
@@ -94,8 +98,7 @@ export default {
      guardarpersonInfo(){      
       this.persona = {                           // creo la persona en una variable //crear el objeto//
         nombre: this.nombre,
-        edad: this.edad,
-        ciudad: this.ciudad,
+        edad: this.edad
       }
       console.log(this.persona)
 
