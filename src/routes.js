@@ -32,4 +32,5 @@ export const routes = [
     name: "peliculas",
     component: () => import("./components/view/peliculasComp.vue"),
   }
+  
 ];

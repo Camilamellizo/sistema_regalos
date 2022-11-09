@@ -1,7 +1,7 @@
 <template>             
-    <div class="font-sans">        
+    <div class="font-sans ">        
         
-      <div class="relative min-h-screen flex flex-col sm:justify-center items-center bg-gray-100 ">
+      <div class="relative min-h-screen flex flex-col sm:justify-center items-center bg-red-900 ">
          
        
         
