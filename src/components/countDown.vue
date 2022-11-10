@@ -6,14 +6,15 @@
       <p>{{ minutes % 60 }}</p>
       <p>{{ seconds % 60 }}</p>
   </div> -->
-  <div class="grid grid-cols-3 text-white font-mono text-xl mt-8">
-    <div class="col-span-1">
+  <div class="grid grid-cols-3 content-center text-white font-mono text-xl mt-8  pt-15">
+
+    <div class="col-span-1 flex justify-end  mr-8 text-2xl">
       <span>
         Faltan
       </span>
     </div>
 
-    <div class="flex  pt-15 text-white font-mono col-span-1">
+    <div class="flex  text-white font-mono col-span-1  flex justify-center">
       <!--  <v-card class="opacitybg mx-auto" width="150px" weight="120px" href="https://www.yusufonaran.me" target="_blank">
           <v-card>
               <p class="text-h2 text--primary text-center font-weight-regular">
@@ -67,7 +68,7 @@
       </div>
       <!-- ---------------- -->
       <div class="flex">
-        <div class="ml-8 mr-2">
+        <div class="ml-8 mr-2 ">
           <p class="text-2xl">
             {{ seconds % 60 }}
           </p>
@@ -80,7 +81,7 @@
       </div>
 
     </div>
-    <div class="col-span-1">
+    <div class="col-span-1 text-2xl flex justify-start">
       para Navidad
     </div>
 

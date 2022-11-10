@@ -23,8 +23,7 @@
     </div>
   </div>
   <footer class="text-white">
-    <hr class="mx-10 mt-10 border border-green-700">
-    <h1>footer</h1>
+   <fooTer/>
   </footer>
 
 </template>
@@ -32,12 +31,14 @@
 <script>
 import '@/assets/tailwind.css';
 import countDown from './components/countDown'
+import fooTer from './components/fooTer.vue'
 
 
 export default {
   name: 'App',
   components: {
-    countDown
+    countDown,
+    fooTer
   },
   data() {
     return {

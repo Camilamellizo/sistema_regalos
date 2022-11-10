@@ -40,9 +40,8 @@
 
       <div class="col-span-2 rounded">
         <!-- parte 1 -->
-        <div class="bg-zinc-200 rounded text-red-900 h-12 pt-2 pb-2">
-          <span> Regalos
-          </span>
+        <div class="bg-zinc-200 rounded text-red-900 h-12 pt-2 pb-2">          
+          <p>Regalos</p>
         </div>
 
         <!-- parte 2 -->
