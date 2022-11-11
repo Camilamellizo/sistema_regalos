@@ -75,21 +75,21 @@
 
       <div class="grid grid-cols-4  ">
 
-        <div class="rounded col-span1 h-96 bg-nieve  bg-no-repeat bg-contain  mt-40 ">
+        <div class="rounded col-span1 h-96 bg-nieve  bg-no-repeat bg-contain">
           <!-- muñeco de nieve -->
         </div>
 
         <div
-          class="col-span-3 relative sm:justify-center text-white text-4xl font-yellowtail border border-white border-4 bg-slate-50/20 rounded h-full mt-44 rounded-xl drop-shadow-2xl  ">
+          class="col-span-3 relative sm:justify-center text-white text-4xl font-yellowtail border border-white border-4 bg-slate-50/20 rounded mt-10 rounded-xl drop-shadow-2xl  ">
 
 
-          <div class="grid grid-cols-2 p-8 font-mono rounded  h-64" v-show="showImage">
+          <div class="grid grid-cols-2 p-8 font-mono rounded  " v-show="showImage">
 
             <div class="col-span-1  p-2 md:p-4 grid justify-items-end ">
-              <img :src=projectShow.image class="w-40 rounded border border-red-900 hover:border-yellow-600">
+              <img :src=projectShow.image class="h-64 w-64 rounded border border-red-900 hover:border-yellow-600">
             </div>
 
-            <div class="col-span-1  p-1 md:p-4 grid justify-items-end flex flex-col text-red-900">
+            <div class="col-span-1  p-1 md:p-4 grid justify-items-end flex flex-col text-white">
 
               <div class=" w-full p-1 md:p-4" id="ptitle">Nombre: {{ projectShow.title }}</div>
 
@@ -100,16 +100,16 @@
           </div>
 
 
-          <section class="overflow-hidden text-gray-700 col-span-1 h-80 ">
+          <section class="overflow-hidden text-white col-span-1 ">
             <div class="container px-5 py-2 mx-auto lg:pt-12 lg:px-32">
 
               <div class="flex flex-wrap -m-1 md:-m-2">
                 <!-- div padre existente -->
                 <div class="flex flex-wrap w-1/3 " v-for="(project, index) in projects" :key="project.image">
-                  <div class="w-40 h-64 p-1 md:p-2">
+                  <div class="h-64 w-48 p-1 md:p-2">
                     <!--  div hijos que debo añadir las veces de la lista -->
                     <img :src=project.image @click="descripciondeImagen(index)"
-                      class="rounded border border-4 border-red-900 hover:border-yellow-600 " alt="gallery"
+                      class=" rounded border border-4 border-red-900 hover:border-yellow-600 " alt="gallery"
                       id="AddImage ">
                   </div>
                 </div>

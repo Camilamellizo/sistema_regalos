@@ -1,6 +1,6 @@
 <template >
-  <div id="app" class=" bg-fondo ">
-    <div class="bg-bolas bg-contain bg-no-repeat bg-right-top">
+  <div id="app" class=" bg-fondo cursor-navidad">
+    <div ><!-- class="bg-bolas bg-contain bg-no-repeat bg-right-top" -->
       <div class="pt-8">
         <!-- NAvBAR -->
         <ul class="flex list-none justify-center">
@@ -22,11 +22,17 @@
     <!-- content -->
     <div class=" pt-8  ">
       <router-view></router-view>
-    </div>
+    </div>    
+   
   </div>
   <footer>
-    <fooTer></fooTer>
+      <fooTer></fooTer>  
+   
   </footer>
+ 
+ 
+ 
+  
 
 </template>
 

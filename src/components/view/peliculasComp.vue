@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="min-h-[60vh]">
         <div class="flex justify-center">
             <form class="text-white font-yellowtail text-xl">
                 <label class="mr-4">¿Qué pelicula quieres ver?</label>
@@ -20,7 +20,7 @@
                 <h4>{{ movie.name }}</h4>
             </div>
         </div> -->
-        <section class="overflow-hidden text-gray-700 h-96">
+        <section class="overflow-hidden text-white">
             <div class="container px-5 py-2 mx-auto lg:pt-12 lg:px-32">
                 <div class="flex flex-wrap -m-1 md:-m-2">
                     <div class="flex flex-wrap w-1/3" id="response" v-for="movie in movies" :key=movie.name>
