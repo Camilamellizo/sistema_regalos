@@ -1,7 +1,8 @@
 # sistema-regalos
 Título: DIGITAL CHRISTMAS WISHES
 
-# Descripción: Una página web para facilitar el proceso de petición de regalos durante la fecha de Navidad, mostrar un catàlogo de peliculas y series navideñas, controlar el clima de Finlandia para saber si podria haber afectaciones en la entrega de los regalos y finalmente enviar la lista de deseos a Papà Noel.
+# Descripción:
+Una página web para facilitar el proceso de petición de regalos durante la fecha de Navidad, mostrar un catàlogo de peliculas y series navideñas, controlar el clima de Finlandia para saber si podria haber afectaciones en la entrega de los regalos y finalmente enviar la lista de deseos a Papà Noel.
 
 # ENLACES UTILIZADOS
 # APIS
