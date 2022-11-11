@@ -1,5 +1,5 @@
 <template>
-    <div class=" text-white font-opensans bg-red-900 pb-4 border border-transparent border-t-yellow-600">
+    <div class=" text-white font-opensans bg-red-900 border border-transparent border-t-yellow-600 h-48">
         <!--  <hr class="border border-green-700"> -->
         <div>
             <div class="flex justify-center pt-4 mb-8">

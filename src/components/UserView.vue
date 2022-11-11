@@ -96,16 +96,11 @@ export default {
 
     guardarpersonInfo() {
       if (this.nombre && this.edad) {
-        const persona = {                           // creo la persona en una variable //crear el objeto//
-          nombre: this.nombre,
-        }
-        console.log(persona),
-          this.$user = this.nombre,
-          console.log(this.$user)
-        this.nombre = "",
+          this.$user.push(this.nombre)
+          this.nombre = "",
           this.edad = "",
           this.validatioForm = false
-        this.$router.push({ name: "catalogo" })  // ir a la ruta sin router link -- el nombre de la ruta de routes.js 
+          this.$router.replace({ name: "catalogo" })  // ir a la ruta sin router link -- el nombre de la ruta de routes.js 
 
       } else {
         this.validatioForm = true

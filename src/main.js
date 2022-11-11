@@ -7,8 +7,10 @@ import {routes} from "./routes.js"
 
 import {createRouter, createWebHashHistory} from "vue-router";
 const app = createApp(App);
-app.config.globalProperties.$allProjects = []
-app.config.globalProperties.$user = ""
+app.config.globalProperties.$allProjects = [];
+app.config.globalProperties.$user = [];
+app.config.globalProperties.$gifts_selected = [];
+
 
 
 const routers=createRouter ({
