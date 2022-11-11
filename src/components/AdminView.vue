@@ -1,13 +1,14 @@
 <template>
-  <div class="grid grid-cols-2 ">
+  <div class="grid grid-cols-6  ">
     <!-- columna uno -->
-    <div class="font-sans  col-span-1">
+    <div class="font-sans  col-span-2 ">
       <div class="relative min-h-screen flex flex-col sm:justify-center items-center  ">
         <div class="relative sm:max-w-sm w-full">
           <div class="card bg-green-700 shadow-lg  w-full h-full rounded-3xl absolute  transform -rotate-6"></div>
-          <div class="card bg-red-600 shadow-lg  w-full h-full rounded-3xl absolute  transform rotate-6"></div>
-          <div class="relative w-full rounded-3xl  px-6 py-4 bg-gray-100 shadow-md">
-            <label for="" class="block mt-3 text-2xl text-gray-700 text-center font-semibold">
+          <div class="card bg-yellow-600 shadow-lg  w-full h-full rounded-3xl absolute  transform rotate-6"></div>
+
+          <div class="relative w-full rounded-3xl  px-6 py-4 bg-gray-200 shadow-md">
+            <label for="" class="block mt-3 text-2xl text-gray-700 text-center font-yellowtail">
               Agregar Regalos de Navidad
             </label>
 
@@ -55,7 +56,7 @@
 
               <div class="flex mt-7 items-center text-center">
                 <hr class="border-gray-300 border-1 w-full rounded-md">
-                <label class="block font-medium text-sm text-gray-600 w-full">
+                <label class="block font-medium font-yellowtail text-sm text-gray-600 w-full">
                   Feliz Navidad
                 </label>
                 <hr class="border-gray-300 border-1 w-full rounded-md">
@@ -65,46 +66,59 @@
             </div>
 
           </div>
+
         </div>
       </div>
     </div>
     <!-- columna dos -->
+    <div class="font-sans  col-span-4  mr-10">
 
-    <div class="col-span-1  relative sm:justify-center text-white text-4xl ">
+      <div class="grid grid-cols-4  ">
 
-      <div class="grid grid-cols-2 p-8 font-mono" v-show="showImage">
-
-        <div class="col-span-1  p-1 md:p-4 grid justify-items-end">
-          <img :src=projectShow.image class="w-48 rounded border border-white">
+        <div class="rounded col-span1 h-96 bg-nieve  bg-no-repeat bg-contain  mt-40 ">
+          <!-- muñeco de nieve -->
         </div>
 
-        <div class="col-span-1  p-1 md:p-4 grid justify-items-end flex flex-col">
-
-          <div class=" w-full p-1 md:p-4" id="ptitle">Nombre: {{ projectShow.title }}</div>
-
-          <div class="w-full p-1 md:p-4" id="pdescription">Descripción: {{ projectShow.description }}</div>
-
-        </div>
-
-      </div>
+        <div
+          class="col-span-3 relative sm:justify-center text-white text-4xl font-yellowtail border border-white border-4 bg-slate-50/20 rounded h-full mt-44 rounded-xl drop-shadow-2xl  ">
 
 
-      <section class="overflow-hidden text-gray-700 col-span-1  ">
-        <div class="container px-5 py-2 mx-auto lg:pt-12 lg:px-32">
+          <div class="grid grid-cols-2 p-8 font-mono rounded  h-64" v-show="showImage">
 
-          <div class="flex flex-wrap -m-1 md:-m-2">
-            <!-- div padre existente -->
-            <div class="flex flex-wrap w-1/3 " v-for="(project, index) in projects" :key="project.image">
-              <div class="w-40 h-64 p-1 md:p-2">
-                <!--  div hijos que debo añadir las veces de la lista -->
-                <img :src=project.image @click="descripciondeImagen(index)"
-                  class="rounded border border-4 border-red-900 hover:border-yellow-300 " alt="gallery" id="AddImage ">
+            <div class="col-span-1  p-2 md:p-4 grid justify-items-end ">
+              <img :src=projectShow.image class="w-40 rounded border border-red-900 hover:border-yellow-600">
+            </div>
+
+            <div class="col-span-1  p-1 md:p-4 grid justify-items-end flex flex-col text-red-900">
+
+              <div class=" w-full p-1 md:p-4" id="ptitle">Nombre: {{ projectShow.title }}</div>
+
+              <div class="w-full p-1 md:p-4" id="pdescription">Descripción: {{ projectShow.description }}</div>
+
+            </div>
+
+          </div>
+
+
+          <section class="overflow-hidden text-gray-700 col-span-1 h-80 ">
+            <div class="container px-5 py-2 mx-auto lg:pt-12 lg:px-32">
+
+              <div class="flex flex-wrap -m-1 md:-m-2">
+                <!-- div padre existente -->
+                <div class="flex flex-wrap w-1/3 " v-for="(project, index) in projects" :key="project.image">
+                  <div class="w-40 h-64 p-1 md:p-2">
+                    <!--  div hijos que debo añadir las veces de la lista -->
+                    <img :src=project.image @click="descripciondeImagen(index)"
+                      class="rounded border border-4 border-red-900 hover:border-yellow-600 " alt="gallery"
+                      id="AddImage ">
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
+          </section>
 
+        </div>
+      </div>
     </div>
   </div>
 </template>

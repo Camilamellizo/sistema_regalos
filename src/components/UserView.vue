@@ -1,12 +1,13 @@
 <template>
 
   <div class="font-sans">
-    <div class="relative min-h-screen flex flex-col sm:justify-center items-center  ">
+    <div
+      class="relative min-h-screen flex flex-col sm:justify-center items-center bg-no-repeat bg-regalos  bg-contain bg-right-top ">
       <div class="relative sm:max-w-sm w-full">
         <div class="card bg-green-700 shadow-lg  w-full h-full rounded-3xl absolute  transform -rotate-6"></div>
-        <div class="card bg-red-600 shadow-lg  w-full h-full rounded-3xl absolute  transform rotate-6"></div>
-        <div class="relative w-full rounded-3xl  px-6 py-4 bg-gray-100 shadow-md">
-          <label for="" class="block mt-3 text-2xl text-gray-700 text-center font-semibold">
+        <div class="card bg-yellow-600 shadow-lg  w-full h-full rounded-3xl absolute  transform rotate-6"></div>
+        <div class="relative w-full rounded-3xl  px-6 py-4 bg-gray-200 shadow-md">
+          <label for="" class="block mt-3 text-2xl text-gray-700 text-center font-yellowtail">
             Estás a punto de hacer tu lista de deseos, pero antes ...
           </label>
           <div class="mt-10 font-mono">
@@ -47,7 +48,7 @@
 
             <div class="mt-7">
               <button type="submit" @click="guardarpersonInfo()"
-                class="bg-green-700 w-full py-3 rounded-xl text-white font-mono shadow-xl hover:shadow-inner focus:outline-none transition duration-500 ease-in-out  transform hover:-translate-x hover:scale-105">
+                class="bg-green-700 w-full py-3 rounded-xl text-white font-yellowtail shadow-xl hover:shadow-inner focus:outline-none transition duration-500 ease-in-out  transform hover:-translate-x hover:scale-105">
                 Entrar
               </button>
             </div>
@@ -58,7 +59,7 @@
 
             <div class="flex mt-7 items-center text-center">
               <hr class="border-gray-300 border-1 w-full rounded-md">
-              <label class="block font-medium text-sm text-gray-600 w-full">
+              <label class="block font-medium font-yellowtail text-sm text-gray-600 w-full">
                 Feliz Navidad
               </label>
               <hr class="border-gray-300 border-1 w-full rounded-md">
@@ -104,7 +105,7 @@ export default {
         this.nombre = "",
           this.edad = "",
           this.validatioForm = false
-          this.$router.push({name:"catalogo"})  // ir a la ruta sin router link -- el nombre de la ruta de routes.js 
+        this.$router.push({ name: "catalogo" })  // ir a la ruta sin router link -- el nombre de la ruta de routes.js 
 
       } else {
         this.validatioForm = true

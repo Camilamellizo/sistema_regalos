@@ -1,17 +1,17 @@
 <template>
-    <div class=" mt-20 flex justify-center"> 
-    
+    <div class=" mt-20 flex justify-center">
+
         <img src="../../assets/navidad.png" alt="arbol de navidad" class="h-98">
-      
+
     </div>
-    
-    </template>
+
+</template>
           
-    <script>
-    export default {
-        name: "homeComp",
-        
-    }
-    
-    </script>  
+<script>
+export default {
+    name: "homeComp",
+
+}
+
+</script>  
     

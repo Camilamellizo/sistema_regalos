@@ -1,9 +1,9 @@
 <template>
-  <div class="font-mono text-xl text-red-900">
-    <nav
-      class="bg-zinc-200 text-white font-mono border-gray-200 px-2 sm:px-4 py-2.5  dark:bg-gray-900 mb-2 mx-10 rounded">
+  <div class=" text-xl text-red-900">
+    <nav class="bg-gray-300 border-gray-200 px-2 sm:px-4 py-2.5  dark:bg-gray-900  mx-10 rounded">
       <div class=" flex flex-wrap justify-between items-center mx-auto ">
-        <span class="self-center text-2xl whitespace-nowrap text-red-900 pl-8">Hola {{userName}} </span>
+        <span class="self-center text-2xl whitespace-nowrap text-red-900 pl-8 font-yellowtail italic">Hola {{ userName }}
+        </span>
         <div class="flex items-center md:order-2">
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="red"
             class="w-10 h-10 mr-8">
@@ -14,8 +14,9 @@
       </div>
     </nav>
     <!-- parte 2 galeria de imagenes  -->
-    <section class="overflow-hidden bg-red-700 mx-10 rounded">
-      <div class="bg-red-700 rounded text-white ">
+    <section
+      class="overflow-hidden bg-red-900 mx-10 rounded border border-transparent border-x-gray-300 border-b-white">
+      <div class="bg-red-900 rounded text-white font-opensans p-2 ">
         <span>Esta Navidad esta llena de deseos... Escoge 4 de estos Regalos para enviar en tu carta a Papá Noel.
         </span>
       </div>
@@ -40,14 +41,16 @@
 
       <div class="col-span-2 rounded">
         <!-- parte 1 -->
-        <div class="bg-zinc-200 rounded text-red-900 h-12 pt-2 pb-2">          
+        <div class="bg-gray-300 rounded text-red-900 h-12 pt-2 pb-2 flex flex justify-center font-yellowtail italic">
           <p>Regalos</p>
+          <span>🎁</span>
         </div>
 
         <!-- parte 2 -->
         <!-- en este div van las imagenes que escoge la persona -->
-        <div class="grid grid-cols-4 gap-2 py-2 px-2 bg-red-700 rounded h-80">
-          <div class="col-span-1 pt-4 pl-2 font-mono flex  " v-for="(image, index) in addImage" :key="index">
+        <div
+          class="grid grid-cols-4 gap-2 py-2 px-2 bg-red-900 rounded-t-lg h-80 border border-transparent  border-x-gray-300">
+          <div class="col-span-1 pt-4 pl-2 font-opensans flex  " v-for="(image, index) in addImage" :key="index">
             <div>
               <div class="col-span-1  p-1 md:p-4 ">
                 <img :src=image.image class="w-48 h-48 rounded border border-white">
@@ -66,10 +69,10 @@
           </div>
         </div>
 
-        <div class="bg-red-700 rounded pb-2">
+        <div class="bg-red-900 rounded-b-lg pb-2 border border-transparent border-x-gray-300 border-b-gray-300">
           <button type="submit"
-            class="bg-zinc-200  px-3  rounded-xl text-red-900 shadow-xl hover:shadow-inner focus:outline-none transition duration-500 ease-in-out  transform hover:-translate-x hover:scale-105">
-            <RouterLink to="/carta">Ver mi Carta</RouterLink>
+            class="bg-gray-300 font-yellowtail italic px-3  rounded-xl text-red-900 shadow-xl hover:shadow-inner focus:outline-none transition duration-500 ease-in-out  transform hover:-translate-x hover:scale-105">
+            <RouterLink to="/carta">Ver mi Carta </RouterLink>
           </button>
         </div>
       </div>
@@ -79,11 +82,11 @@
       <div class="col-span-1  flex flex-col">
         <!-- fila 1 api weather-->
         <div class="mb-4 ">
-          <div class="bg-zinc-200 text-red-900 rounded h-12 rounded pt-2">
-            <span>El Clima</span>
+          <div class="bg-gray-300 text-red-900 rounded h-12 rounded pt-2 font-yellowtail italic">
+            <span>El Clima 🌈</span>
           </div>
-          <div class="bg-red-700 rounded  ">
-            <div v-if="weather" class="grid  justify-items-center text-center text-white font-mono pb-2">
+          <div class="bg-red-900 rounded border border-transparent border-x-gray-300 border-b-gray-300 ">
+            <div v-if="weather" class="grid  justify-items-center text-center text-white font-opensans pb-2">
               <img :src="imgUrl" :alt="weather.name" class="w-24 h-24 rounded">
               <h2>{{ weather.main.temp }}</h2>
               <p>{{ weather.name }},{{ weather.sys.country }}</p>
@@ -94,12 +97,12 @@
 
         <!-- fila 2 api-peliculas -->
         <div class=" ">
-          <div class="bg-zinc-200  text-red-900 rounded h-12 rounded pt-2">
-            <span>Peliculas</span>
+          <div class="bg-gray-300  text-red-900 rounded h-12 rounded pt-2 font-yellowtail italic">
+            <span>Peliculas 📽️</span>
           </div>
-          <div class="bg-red-700 rounded h-38 p-4">
-            <span class="text-white font-mono "> Ya tienes planes para esta navidad? <br>haz click
-              <span class="text-amber-200 ">
+          <div class="bg-red-900 rounded h-38 p-8 border border-transparent border-x-gray-300 border-b-gray-300">
+            <span class="text-white font-opensans "> Ya tienes planes para esta navidad? <br>haz click
+              <span class="text-amber-200 font-yellowtail ">
                 <RouterLink to="/peliculas">Aqui</RouterLink>
               </span> para ver una pelicula en familia.
             </span>
@@ -150,7 +153,7 @@ export default {
 
   mounted() {
     this.getWeather()
-    this.messi()
+
   },
 
   methods: {
@@ -177,9 +180,7 @@ export default {
     eliminarImagen(index) {
       this.addImage.splice(index, 1)
     },
-    messi(){
-      console.log(this.$user)
-    }
+
   }
 }
 

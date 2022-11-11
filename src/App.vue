@@ -1,29 +1,31 @@
 <template >
-  <div id="app" class="pt-8 bg-red-900 ">
-    <div>
-      <!-- NAvBAR -->
-      <ul class="flex list-none justify-center">
-        <li class="font-mono text-4xl text-white mr-4 border-4 border-transparent hover:border-b-white">
-          <RouterLink to="Admin">Papá Noel</RouterLink>
-        </li>
-        <li class="text-4xl text-white">/</li>
-        <li class="font-mono text-4xl text-white ml-4 border-4 border-transparent hover:border-b-white">
-          <RouterLink to="User">Familia</RouterLink>
-        </li>
-      </ul>
+  <div id="app" class=" bg-fondo ">
+    <div class="bg-bolas bg-contain bg-no-repeat bg-right-top">
+      <div class="pt-8">
+        <!-- NAvBAR -->
+        <ul class="flex list-none justify-center">
+          <li class="font-yellowtail italic text-4xl text-white mr-4 border-4 border-transparent hover:border-b-white">
+            <RouterLink to="Admin">Papá Noel</RouterLink>
+          </li>
+          <li class="text-4xl text-white">/</li>
+          <li class="font-yellowtail italic text-4xl text-white ml-4 border-4 border-transparent hover:border-b-white">
+            <RouterLink to="User">Familia</RouterLink>
+          </li>
+        </ul>
+      </div>
+      <div>
+        <countDown />
+      </div>
     </div>
-    <div>
-      <countDown />
-    </div>
-    <hr class="mx-10 mt-4 border border-green-700">
+    <hr class="mx-10 mt-4 border border-yellow-600">
 
     <!-- content -->
     <div class=" pt-8  ">
       <router-view></router-view>
     </div>
   </div>
-  <footer class="text-white">
-   <fooTer/>
+  <footer>
+    <fooTer></fooTer>
   </footer>
 
 </template>
